@@ -99,6 +99,18 @@ public class Vertex<V, W extends Comparable<W>>
 	}
 
 	/**
+	 * Returns a set containing all the {@link Edge}'s which connect this vertex to the specified vertex.
+	 *
+	 * @param vertex The vertex to return edges for that this vertex is connected to.
+	 * @return A set containing only {@link Edge}'s that either go from this vertex to the specified vertex or those
+	 * which connect both in an undirected manner.
+	 */
+	public Set<Edge<V, W>> getConnectingEdges(final Vertex<V, W> vertex)
+	{
+		return graph.getConnectingEdges(this, vertex);
+	}
+
+	/**
 	 * Calculates the hash code for this vertex.
 	 *
 	 * @return The vertex's hash code, which is based on the graph and the vertex's unique ID.
